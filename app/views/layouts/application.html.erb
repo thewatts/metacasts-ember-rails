@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BeerDB</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+<body>
+  <script type="text/x-handlebars">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/">MetaCasts.tv</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href='#'>Countries</a></li>
+              <li>{{#linkTo "about"}}About{{/linkTo}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        {{outlet}}
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; MetaCasts.tv 2013</p>
+      </footer>
+
+    </div>
+  </script>
+
+</body>
+</html>
