@@ -1,0 +1,12 @@
+<h1>{{ title }}</h1>
+
+<ul class="unstyled list-striped">
+  {{#each brewery in breweries}}
+    {{#linkTo "brewery" brewery}}
+      <h3>{{ brewery.title }}</h3>
+    {{/linkTo}}
+    {{#if brewery.cityState}}
+      <h4>{{ brewery.cityState }}</h4>
+    {{/if}}
+  {{/each}}
+</ul>
