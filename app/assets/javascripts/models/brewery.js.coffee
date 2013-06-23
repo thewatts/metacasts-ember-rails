@@ -19,8 +19,7 @@ App.Brewery = DS.Model.extend
     if @get("synonyms")?
       name += " aka #{@get("synonyms")}"
       return name
-  ).property('title', 'synonymns')
-
+  ).property("title", "synonyms")
 
   beerCount: (->
     beers = @get("beers")

@@ -1,0 +1,25 @@
+<form>
+
+  <div class="control-group">
+    <label class="control-label" for="title">Title</label>
+    <div class="controls">
+      {{view Ember.TextField valueBinding="title" class="input-xxlarge"}}
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="synonyms">Synonyms</label>
+    <div class="controls">
+      {{view Ember.TextField valueBinding="synonyms" class="input-xxlarge"}}
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="title">Address</label>
+    <div class="controls">
+      {{view Ember.TextArea valueBinding="address" class="input-xxlarge"}}
+    </div>
+  </div>
+
+  <button class="btn btn-primary" {{action "save"}}>Save</button>
+</form>

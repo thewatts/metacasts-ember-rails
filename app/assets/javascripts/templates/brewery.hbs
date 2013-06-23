@@ -2,43 +2,14 @@
   <h1>{{ displayName }}</h1>
 
   <h3>
-    {{cityState}}
+    {{ cityState }}
     {{#linkTo "country" country}}
-      {{country.title}}
+      {{ country.title }}
     {{/linkTo}}
   </h3>
-  {{#if synonyms}}
-    <p>
-      Synonyms: {{synonyms}}
-    </p>
+  {{#if isEditing}}
+    {{partial "breweries/form"}}
+  {{else}}
+    {{partial "breweries/show"}}
   {{/if}}
-  {{#if address}}
-    <p>
-      Address: {{address}}
-    </p>
-  {{/if}}
-  <p>
-    {{#if beerCount}}
-      Beer Count: {{beerCount}}
-    {{else}}
-      Beer Count: 0
-    {{/if}}
-  </p>
-  <button class="btn btn-primary btn-mini" {{action "edit"}}>
-    Edit
-  </button>
-
-  <hr>
-
-  <h3>Beers</h3>
-  <ul class="unstyled list-striped">
-    {{#each beer in beers}}
-      <li>
-        <strong>{{beer.title}}</strong>
-        <span class="pull-right">{{beer.abv}}%</span>
-      </li>
-    {{else}}
-      <li><strong>No beers! You should add one.</strong></li>
-    {{/each}}
-  </ul>
 </div>
